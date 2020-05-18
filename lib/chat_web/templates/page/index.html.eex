@@ -1,0 +1,24 @@
+<form action="POST" class="box" id="chat-form">
+  <div class="field">
+    <div class="control">
+      <input type="text" placeholder="Nome de usuário" class="input" size="5" id="user-name">
+    </div>
+  </div>
+
+  <div class="field">
+    <div class="control">
+      <textarea id="user-msg" class="textarea has-fixed-size is-info" rows="2" cols="70" placeholder="O que está acontecendo?"></textarea>
+    </div>
+  </div>
+
+  <div class="buttons is-right">
+    <div id="btnTwitter" class="button is-rounded is-info">Tweetar</div>
+  </div>
+</form>
+<div id="chat-box">
+  <%= for message <- @messages do %>
+  <div class='box'>
+    <b><%= message.name %></b> <%= message.inserted_at %><br> <%= message.body %>
+  </div>
+  <% end %>
+</div>
